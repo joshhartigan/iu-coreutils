@@ -1,4 +1,4 @@
-// cat - concatenate and print files
+// cat - read and output files
 
 #include <stdio.h>
 
@@ -7,7 +7,6 @@ void copy_file(FILE *in, FILE *out);
 int main(int argc, char **argv) {
 
   if (argc == 1) {
-    // no arguments - use standard input
     copy_file(stdin, stdout);
   } else {
     FILE *read;
@@ -28,7 +27,7 @@ int main(int argc, char **argv) {
 
 void copy_file(FILE *in, FILE *out) {
   int chr;
-  while ( (chr = getc(in)) != EOF ) {
+  while ( (chr = getc(in) ) != EOF ) {
     putc(chr, out);
   }
 }
