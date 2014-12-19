@@ -1,4 +1,6 @@
-![](http://i.imgur.com/raSVxN0.png)
+![](http://i.imgur.com/WoA2pWw.png)
+
+![](https://img.shields.io/github/issues/joshhartigan/iu-coreutils.svg) ![](https://img.shields.io/badge/license-BSD-yellow.svg) ![](https://img.shields.io/badge/language-C-blue.svg)
 
 *"better, simpler coreutils"*
 
