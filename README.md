@@ -38,3 +38,7 @@ this project.
 `cat` - sequentially read specified files and output the contents (to stdout by
 default).
 
+`lnum` - prepend line numbers to the input. can be used as a filter (e.g.
+`cat file.txt | lnum`), can be applied directly to files (`lnum file.txt`).
+Chooses `stdin` by default, when run with no arguments.
+
