@@ -3,7 +3,9 @@
 *"better, simpler coreutils"*
 
 These intend to follow a derivative of the original UNIX philosophy, which will
-eventually be documented in this README.
+eventually be documented in this repository.
+
+**[PROGRAMS](#programs)** / A list of the utilities with brief descriptions
 
 **Buildfile**
 
@@ -30,4 +32,9 @@ program should also be an entry point to the file.
 I am using Clang, not GCC. Clang seems to me like it is a leaner and more
 lightweight compiler - speaking of which, I may switch to TCC in the future for
 this project.
+
+#### Programs
+
+`cat` - sequentially read specified files and output the contents (to stdout by
+default).
 
