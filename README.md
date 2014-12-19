@@ -1,6 +1,6 @@
-### iu-coreutils
+![](http://i.imgur.com/raSVxN0.png)
 
-Better, simpler coreutils.
+*"better, simpler coreutils"*
 
 These intend to follow a derivative of the original UNIX philosophy, which will
 eventually be documented in this README.
