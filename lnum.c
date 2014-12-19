@@ -3,28 +3,29 @@
 
 #include <stdio.h>
 
-void line_number(FILE *in);
+#define MAX_LINE_SIZE 1000
+
+void show_line_numbers(FILE *in);
 
 int main(int argc, char **argv) {
 
   if (argc == 1) {
-    line_number(stdin);
+    show_line_numbers(stdin);
   } else {
     FILE *read = fopen( argv[1], "r" );
     if (read == NULL) { printf( "*** lnum: %s cannot be opened\n", argv[1] ); }
-    else { line_number(read); }
+    else { show_line_numbers(read); }
   }
 
 }
 
-void line_number(FILE *in) {
-  int chr;
-  int lines;
-  while ( (chr = getc(in) ) != EOF ) {
-    if (chr == '\n') {
-      lines++;
-    }
-    putc(chr, stdout);
+void show_line_numbers(FILE *in) {
+  int line_count = 1;
+  char line[MAX_LINE_SIZE];
+
+  while ( fgets(line, MAX_LINE_SIZE, in) ) {
+    printf("%d\t%s", line_count, line);
+    line_count++;
   }
 }
 
