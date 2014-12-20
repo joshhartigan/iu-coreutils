@@ -12,13 +12,14 @@ int main(int argc, char **argv) {
     FILE *read;
     while (--argc > 0) {
       read = fopen(*++argv, "r");
+
       if (read == NULL) {
         printf("*** cat: %s cannot be opened\n", *argv);
         return 1;
-      } else {
-        copy_file(read, stdout);
-        fclose(read);
       }
+
+      copy_file(read, stdout);
+      fclose(read);
     } // end while
   } // end else
 
