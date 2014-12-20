@@ -20,6 +20,8 @@ The above command will attempt to compile `FILE.c`, show any warnings that may
 arise, and output the executable to `FILE`.
   The reason I will not need to link executables together is because each
 utility in this collection will be in its own contained C files.
+  When run with no arguments, the Buildfile will compile all `.c` files in the
+directory.
 
 **Header Files**
 
