@@ -46,3 +46,6 @@ default).
 `cat file.txt | lnum`), can be applied directly to files (`lnum file.txt`).
 Chooses `stdin` by default, when run with no arguments.
 
+`ls` - lists files in the directories specified. `-a` option includes hidden
+files.
+
