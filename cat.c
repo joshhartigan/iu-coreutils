@@ -22,7 +22,6 @@ int main(int argc, char **argv) {
     } // end while
   } // end else
 
-  return 0;
 }
 
 void copy_file(FILE *in, FILE *out) {
