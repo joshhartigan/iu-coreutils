@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     DIR *directory = opendir(*++argv);
 
     if (directory == NULL) {
-      printf("*** ls: %s cannot be opened\n", *argv);
+      fprintf(stderr, "*** ls: %s cannot be opened\n", *argv);
       return 1;
     }
 

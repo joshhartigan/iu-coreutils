@@ -13,7 +13,9 @@ int main(int argc, char **argv) {
     show_line_numbers(stdin);
   } else {
     FILE *read = fopen( argv[1], "r" );
-    if (read == NULL) { printf( "*** lnum: %s cannot be opened\n", argv[1] ); }
+    if (read == NULL) {
+      fprintf(stderr, "*** lnum: %s cannot be opened\n", argv[1] );
+    }
     else { show_line_numbers(read); }
   }
 

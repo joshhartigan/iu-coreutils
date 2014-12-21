@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
       read = fopen(*++argv, "r");
 
       if (read == NULL) {
-        printf("*** cat: %s cannot be opened\n", *argv);
+        fprintf(stderr, "*** cat: %s cannot be opened\n", *argv);
         return 1;
       }
 
