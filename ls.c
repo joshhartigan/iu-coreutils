@@ -11,7 +11,8 @@ int main(int argc, char **argv) {
   bool show_all = false;
 
   // if the `-a` flag is given, include hidden files.
-  if ( getopt(argc, argv, "a") != -1 ) {
+  int c = getopt(argc, argv, "a");
+  if (c == 'a') {
     argc--; // obviously we should ignore the flag as an argument
     argv++;
     show_all = true;
