@@ -1,0 +1,6 @@
+language: c
+before: make
+script: ./ls . && ./cat cat.c | ./lnum
+
+install: true # skip
+
