@@ -25,8 +25,6 @@ int main(int argc, char **argv) {
 
 }
 
-#define BUFFER_SZ 1024
-
 void output_file(FILE *in, FILE *out) {
   static const size_t BUFFER_SZ = 1024;
   static char buffer[BUFFER_SZ];
