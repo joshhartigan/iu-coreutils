@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
       read_file = fopen(*++argv, "r");
 
       if (read_file == NULL) {
-        fprintf(stderr, "*** cat: %s cannot be opened\n", *argv);
+        perror(*argv);
         return 1;
       }
 
