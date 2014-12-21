@@ -1,5 +1,0 @@
-language: c
-install: make
-script: ./ls . && ./cat cat.c | ./lnum
-
-
