@@ -25,10 +25,15 @@ int main(int argc, char **argv) {
 
 }
 
+#define BUFFER_SZ 1024
+
 void output_file(FILE *in, FILE *out) {
-  int chr;
-  while ( (chr = getc(in) ) != EOF ) {
-    putc(chr, out);
+  static const size_t BUFFER_SZ = 1024;
+  static char buffer[BUFFER_SZ];
+  
+  size_t sz; // Number of bytes read by fread()
+  while ((sz = fread(buffer, 1, BUFFER_SZ, in)) != 0) {
+    fwrite(buffer, 1, BUFFER_SZ, out);
   }
 }
 
