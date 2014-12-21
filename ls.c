@@ -65,8 +65,9 @@ int main(int argc, char **argv) {
     }
   }
 
-  if (dirs == 0)
-      dirarray[dirs++] = "./";
+  if (dirs == 0) {
+    dirarray[dirs++] = "./";
+  }
 
   for (i = 0; i < dirs; i++) {
     DIR *directory = opendir(dirarray[i]);

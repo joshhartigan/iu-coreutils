@@ -2,11 +2,11 @@
 #define COMMON_ARG_PARSER_H
 
 struct arg {
-    const char *lng;
-    char shrt;
-    const char *help_txt;
+  const char *lng;
+  char shrt;
+  const char *help_txt;
 
-    int has_arg :1;
+  int has_arg :1;
 };
 
 #define ARG_PARSER_EXTRA -4
