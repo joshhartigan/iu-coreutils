@@ -11,5 +11,5 @@ all: $(PROGRAMS)
 	@$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	@rm $(PROGRAMS)
+	@rm -f $(PROGRAMS)
 
