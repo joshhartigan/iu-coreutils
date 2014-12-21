@@ -9,17 +9,17 @@ int main(int argc, char **argv) {
   if (argc == 1) {
     output_file(stdin, stdout);
   } else {
-    FILE *read;
+    FILE *read_file;
     while (--argc > 0) {
-      read = fopen(*++argv, "r");
+      read_file = fopen(*++argv, "r");
 
-      if (read == NULL) {
+      if (read_file == NULL) {
         fprintf(stderr, "*** cat: %s cannot be opened\n", *argv);
         return 1;
       }
 
-      output_file(read, stdout);
-      fclose(read);
+      output_file(read_file, stdout);
+      fclose(read_file);
     } // end while
   } // end else
 
