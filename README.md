@@ -46,7 +46,7 @@ The code base is simple and easy to understand.
   * `.gitignore` - a list of files for git to ignore (i.e the ones that don't
     need version control)
 
-# Philosophy
+#### Philosophy
 
 This is the [ 'philosophy' / 'guidelines' / 'rules' / 'regulations' /
 'suggestions' ] that `iu` programs should follow. **It is a work in progress.**
