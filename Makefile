@@ -1,36 +1,15 @@
-
 CFLAGS += -Wall -std=c11 -I./include
 
-BINDIR := bin
-
-PROGRAMS := $(wildcard *.c)
-PROGBINS := $(patsubst %.c,$(BINDIR)/%,$(PROGRAMS))
-
-COMMONSRC := $(wildcard ./common/*.c)
-COMMONOBJ := $(COMMONSRC:.c=.o)
-COMMONAR := ./common.a
+SRCFILES := $(wildcard *.c)
+PROGS := $(SRCFILES:.c=)
 
 .PHONY: all clean
-all: $(PROGBINS)
+	all: $(PROGS)
 
-$(BINDIR):
-	@mkdir $(BINDIR)
-
-%.o: %.c
+%: %.c
 	@echo "$< -o $@"
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-$(COMMONAR): $(COMMONOBJ)
-	@echo "common/*.o -o ./common.a"
-	@$(AR) rcs $@ $(COMMONOBJ)
-
-$(BINDIR)/%: %.c $(COMMONAR) | $(BINDIR)
-	@echo "$< -o $@"
-	@$(CC) $(CFLAGS) $< $(COMMONAR) -o $@
+	@$(CC) $(CFLAGS) $< -o bin/$@
 
 clean:
-	@rm -f $(COMMONAR)
-	@rm -f $(COMMONOBJ)
-	@rm -f $(PROGBINS)
-	@rm -fr $(BINDIR)
+	rm bin/*
 
