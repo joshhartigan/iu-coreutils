@@ -8,13 +8,15 @@
 void show_line_numbers(FILE *in);
 
 int main(int argc, char **argv) {
+  int arg_count = argc;
+  char **arguments = argv;
 
-  if (argc == 1) {
+  if (arg_count == 1) {
     show_line_numbers(stdin);
   } else {
-    FILE *read = fopen( argv[1], "r" );
+    FILE *read = fopen( arguments[1], "r" );
     if (read == NULL) {
-      perror( argv[1] );
+      perror( arguments[1] );
     }
     else { show_line_numbers(read); }
   }

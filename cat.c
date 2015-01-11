@@ -7,16 +7,18 @@
 void output_file(FILE *in, FILE *out);
 
 int main(int argc, char **argv) {
+  int arg_count = argc;
+  char **arguments = argv;
 
-  if (argc == 1) {
+  if (arg_count == 1) {
     output_file(stdin, stdout);
   } else {
     FILE *read_file;
-    while (--argc > 0) {
-      read_file = fopen(*++argv, "r");
+    while (--arg_count > 0) {
+      read_file = fopen(*++arguments, "r");
 
       if (read_file == NULL) {
-        perror(*argv);
+        perror(*arguments);
         return 1;
       }
 

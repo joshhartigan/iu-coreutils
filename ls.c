@@ -10,17 +10,20 @@
 void list_items(DIR *directory, bool show_all);
 
 int main(int argc, char **argv) {
+  int arg_count = argc;
+  char **arguments = argv;
+
   bool show_all = false;
 
   // if the `-a` flag is given, include hidden files.
-  int c = getopt(argc, argv, "a");
+  int c = getopt(arg_count, arguments, "a");
   if (c == 'a') {
-    argc--; // obviously we should ignore the flag as an argument
-    argv++;
+    arg_count--; // obviously we should ignore the flag as an argument
+    arguments++;
     show_all = true;
   }
 
-  if (argc == 1) { // no arguments? - use the current directory
+  if (arg_count == 1) { // no arguments? - use the current directory
     char current_dir[MAX_SIZE];
     getcwd( current_dir, sizeof(current_dir) );
 
@@ -29,11 +32,11 @@ int main(int argc, char **argv) {
     list_items(directory, show_all);
   }
 
-  while (--argc > 0) {
-    DIR *directory = opendir(*++argv);
+  while (--arg_count > 0) {
+    DIR *directory = opendir(*++arguments);
 
     if (directory == NULL) {
-      perror(*argv);
+      perror(*arguments);
       return 1;
     }
 
