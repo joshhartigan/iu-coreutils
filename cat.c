@@ -12,20 +12,21 @@ int main(int argc, char **argv) {
 
   if (arg_count == 1) {
     output_file(stdin, stdout);
-  } else {
-    FILE *read_file;
-    while (--arg_count > 0) {
-      read_file = fopen(*++arguments, "r");
+    return 0;
+  }
 
-      if (read_file == NULL) {
-        perror(*arguments);
-        return 1;
-      }
+  FILE *read_file;
+  while (--arg_count > 0) {
+    read_file = fopen(*++arguments, "r");
 
-      output_file(read_file, stdout);
-      fclose(read_file);
-    } // end while
-  } // end else
+    if (read_file == NULL) {
+      perror(*arguments);
+      return 1;
+    }
+
+    output_file(read_file, stdout);
+    fclose(read_file);
+  } // end while
 
 }
 
@@ -37,4 +38,3 @@ void output_file(FILE *in, FILE *out) {
     fwrite(buffer, 1, size, out);
   }
 }
-
