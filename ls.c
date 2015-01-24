@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
   }
 
   if (arg_count == 1) { // no arguments? - use the current directory
-    char current_dir[MAX_SIZE];
+    char current_dir[MAX_STRING_SIZE];
     getcwd( current_dir, sizeof(current_dir) );
 
     DIR *directory = opendir(current_dir);

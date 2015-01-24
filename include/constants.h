@@ -1,2 +1,2 @@
-#define MAX_SIZE 1024
-
+#define MAX_STRING_SIZE 1024
+#define MAX_LINE_SIZE 1000

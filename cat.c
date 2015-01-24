@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 }
 
 void output_file(FILE *in, FILE *out) {
-  static char buffer[MAX_SIZE];
+  static char buffer[MAX_STRING_SIZE];
 
   size_t size; // Number of bytes read by fread()
   while ( (size = fread(buffer, 1, MAX_SIZE, in) ) != 0) {

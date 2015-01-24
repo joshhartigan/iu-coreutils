@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-#define MAX_LINE_SIZE 1000
+#include "constants.h"
 
 void show_line_numbers(FILE *in);
 
