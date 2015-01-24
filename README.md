@@ -38,11 +38,12 @@ files.
 
 The code base is simple and easy to understand.
 
-  * `./\*.c` - the actual programs for iu-coreutils
-  * `include/` - headers for functionality that is shared throught the programs
+  * `*.c` - the actual programs for iu-coreutils
+  * `include/` - headers for functionality that is shared throught the programs. This is
+    told to the compiler, so you only need to use `#include "[file_name].h"` when `file_name.h`
+    is in the include folder, rather than `#include "include/[file_name].h"`
   * `Makefile` - the compilation automation system. Run `make name` to compile
     the program `name.c`
-  * `bin/` - the folder in which compiled binaries are placed.
   * `.gitignore` - a list of files for git to ignore (i.e the ones that don't
     need version control)
 
