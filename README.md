@@ -51,6 +51,7 @@ The code base is simple and easy to understand.
 This is the [ 'philosophy' / 'guidelines' / 'rules' / 'regulations' /
 'suggestions' ] that `iu` programs should follow. **It is a work in progress.**
 
+* **Do one thing and do it well**.
 * One program gets one C file.
   * Shared functionality between programs can be split between multiple file.
 * Don't write the same function twice.
@@ -58,4 +59,3 @@ This is the [ 'philosophy' / 'guidelines' / 'rules' / 'regulations' /
 * **Never** use a variable name like `sz` when you could use `size`.
 * Use comments often, whenever you think something might not be clear. Don't be
   pretentious about comment usage (i.e. *"My code is self-documenting"*)
-
