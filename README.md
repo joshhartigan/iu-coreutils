@@ -57,6 +57,5 @@ This is the [ 'philosophy' / 'guidelines' / 'rules' / 'regulations' /
   * Shared functionality between programs can be split between multiple file.
 * Don't write the same function twice.
 * Avoid #ifdef, #ifndef, and general preprocessor-ugliness
-* Avoid using a variable name like `sz` when you could use `size`.
 * Use comments often, whenever you think something might not be clear. Don't be
   pretentious about comment usage (i.e. *"My code is self-documenting"*)
